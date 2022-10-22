@@ -21,7 +21,7 @@ struct ProductListView: View {
     var body: some View {
         
         NavigationView {
-            getContentView
+            contentView
                 .navigationTitle(viewModel.getTitle(isFavouritesList: isFavouritesList))
                 .navigationBarTitleDisplayMode(.inline)
         }
@@ -34,7 +34,7 @@ struct ProductListView: View {
         }
     }
 
-    var getContentView: some View {
+    var contentView: some View {
         if isFavouritesList {
             return favouriteListView
         }
