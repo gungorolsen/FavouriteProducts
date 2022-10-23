@@ -78,5 +78,4 @@ final class ProductListViewModel: ObservableObject {
         }
         return "Refresh Product List"
     }
-
 }

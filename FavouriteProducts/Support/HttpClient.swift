@@ -13,7 +13,6 @@ enum HttpError: Error {
     case invalidURL(url: String)
 }
 
-
 protocol HTTPClientType {
     func dataTaskPublisher<T: Decodable>(urlString: String) async throws -> T
 }

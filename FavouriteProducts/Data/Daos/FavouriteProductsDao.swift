@@ -45,4 +45,3 @@ extension FavouriteProductsDaoImpl: FavouriteProductsDao {
         userDefaults.set(data, forKey: "fav.products")
     }
 }
-

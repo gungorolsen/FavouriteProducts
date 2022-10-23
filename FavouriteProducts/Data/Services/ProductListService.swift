@@ -32,4 +32,3 @@ extension ProductListService: ProductListRepo {
         Endpoints.getUrlString(endpoint: .productList)
     }
 }
-
