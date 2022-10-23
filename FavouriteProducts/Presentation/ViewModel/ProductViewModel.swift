@@ -25,14 +25,14 @@ final class ProductViewModel: ObservableObject, Identifiable {
     var name: String { product.name }
     
     var price: String {
-        "Price: " + (currencyFormatter.string(from: NSNumber(value: product.price)) ?? "N/A")
+        "Price: " + (currencyFormatter.string(from: product.price.toNumber()) ?? "N/A")
     }
     var addToButtonText: String { product.addToButtonText }
     
     var imageUrl: URL { product.imageUrl }
     
     var rating: String {
-        "Rating: " + (numberFormatter.string(from: NSNumber(value: product.rating)) ?? "0") + " out of 5"
+        "Rating: " + (numberFormatter.string(from: product.rating.toNumber()) ?? "0") + " out of 5"
     }
     
     var id: String { product.id }
