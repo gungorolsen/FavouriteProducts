@@ -28,10 +28,12 @@ final class ProductViewModel: ObservableObject, Identifiable {
         "Price: " + (currencyFormatter.string(from: NSNumber(value: product.price)) ?? "N/A")
     }
     var addToButtonText: String { product.addToButtonText }
+    
     var imageUrl: URL { product.imageUrl }
+    
     var rating: String {
         "Rating: " + (numberFormatter.string(from: NSNumber(value: product.rating)) ?? "0") + " out of 5"
     }
-    let id = UUID()
-
+    
+    var id: String { product.id }
 }
