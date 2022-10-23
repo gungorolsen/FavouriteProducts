@@ -53,13 +53,6 @@ final class ProductListViewModel: ObservableObject {
         }
     }
     
-    func getTitle(isFavouritesList: Bool) -> String {
-        if isFavouritesList {
-            return "Your Favourites"
-        }
-        return "Product List"
-    }
-    
     func didTapFavouriteButton(for product: Product) {
         favouriteProductsUseCase.addOrRemoveFavourite(product)
     }
@@ -70,6 +63,20 @@ final class ProductListViewModel: ObservableObject {
     
     func isFavourite(_ productViewModel: ProductViewModel) -> Bool {
         favouriteProductsUseCase.favouriteProducts.contains(productViewModel.product)
+    }
+
+    func getTitle(isFavouritesList: Bool) -> String {
+        if isFavouritesList {
+            return "Your Favourites"
+        }
+        return "Product List"
+    }
+
+    func getEmptyListTitle(isFavouritesList: Bool) -> String {
+        if isFavouritesList {
+            return "No favourites"
+        }
+        return "Refresh Product List"
     }
 
 }

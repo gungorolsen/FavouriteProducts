@@ -72,6 +72,12 @@ class ProductListViewModelTests: XCTestCase {
     }
 
     @MainActor
+    func testEmptyListTitle() throws {
+        XCTAssertEqual(viewModel.getEmptyListTitle(isFavouritesList: true), "No favourites")
+        XCTAssertEqual(viewModel.getEmptyListTitle(isFavouritesList: false), "Refresh Product List")
+    }
+
+    @MainActor
     func testGetEmptyFavourites() throws {
         viewModel.refreshFavourites()
         XCTAssertTrue(viewModel.favourites.isEmpty)

@@ -43,7 +43,7 @@ struct ProductListView: View {
     
     var favouriteListView: AnyView {
         if viewModel.favourites.isEmpty {
-            return AnyView(Text("No favourites"))
+            return AnyView(Text(viewModel.getEmptyListTitle(isFavouritesList: true)))
         }
         return AnyView(
             getListView(for: viewModel.favourites)
@@ -62,7 +62,7 @@ struct ProductListView: View {
                 Button {
                     Task { await viewModel.refreshProductsList() }
                 } label: {
-                    Text("Refresh list")
+                    Text(viewModel.getEmptyListTitle(isFavouritesList: false))
                 }.padding()
             )
         case .loaded(let products):
