@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ProductListViewModelMapper {
+final class ProductListViewModelMapper {
     
     func map(_ products: [Product]) -> [ProductViewModel] {
         products.map {
