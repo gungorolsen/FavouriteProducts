@@ -26,7 +26,6 @@ class ProductViewModelTests: XCTestCase {
         return formatter
     }()
 
-    
     @MainActor
     override func setUpWithError() throws {
         viewModel = ProductViewModel(product: MocksData.product1,

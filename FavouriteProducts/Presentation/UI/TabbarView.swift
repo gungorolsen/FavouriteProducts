@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct TabbarView: View {
     
     @StateObject
     var viewModel = ProductListViewModel()
